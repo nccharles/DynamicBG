@@ -6,8 +6,8 @@ const App = () => {
   const [name, setName] = useState("");
   const onSubmit = (e) => {
     e.preventDefault();
-    if(name===""){
-    return  alert("Please Enter the Background")
+    if (name === "") {
+      return alert("Please Enter the Background");
     }
     e.target.reset();
     setBg(name);
@@ -17,11 +17,11 @@ const App = () => {
     setName(e.target.value);
   };
   return (
-    <div style={{background:`${bg}`}} className="App">
+    <div style={{ background: `${bg}` }} className="App">
       <form onSubmit={onSubmit}>
         <input type="text" name="name" onChange={onChange} />
-        
-        <button style={{background:`${bg}`,color:"#fff"}}>{bg}</button>
+
+        <button style={{ background: `${bg}`, color: "#fff" }}>{bg}</button>
       </form>
     </div>
   );

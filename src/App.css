@@ -4,12 +4,11 @@
   max-width: 400px;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
-
 }
-button{
+button {
   margin: 10px auto;
   padding: 10px 20px;
 }
