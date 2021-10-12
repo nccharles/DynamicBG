@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
 
-function App() {
+const App = () => {
+  const [bg, setBg] = useState("grey");
+  const [name, setName] = useState("");
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if(name===""){
+    return  alert("Please Enter the Background")
+    }
+    e.target.reset();
+    setBg(name);
+    setName("");
+  };
+  const onChange = (e) => {
+    setName(e.target.value);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form onSubmit={onSubmit}>
+        <input type="text" name="name" onChange={onChange} />
+        
+        <button style={{background:`${bg}`}}>{bg}</button>
+      </form>
     </div>
   );
-}
+};
 
 export default App;
