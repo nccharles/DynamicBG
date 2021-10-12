@@ -17,11 +17,11 @@ const App = () => {
     setName(e.target.value);
   };
   return (
-    <div className="App">
+    <div style={{background:`${bg}`}} className="App">
       <form onSubmit={onSubmit}>
         <input type="text" name="name" onChange={onChange} />
         
-        <button style={{background:`${bg}`}}>{bg}</button>
+        <button style={{background:`${bg}`,color:"#fff"}}>{bg}</button>
       </form>
     </div>
   );
